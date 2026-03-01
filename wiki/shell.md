@@ -24,7 +24,7 @@ An [operating system](./operating-system.md) shell is a computer program that pr
 
 ### Login shell
 
-A login shell is started when a user logs in to the system, for example via [SSH](./ssh.md#what-is-ssh).
+A login shell is started when a user logs in to the system, for example via [`SSH`](./ssh.md#what-is-ssh).
 It reads login-specific configuration files such as `~/.bash_profile` or `~/.profile`.
 
 > [!NOTE]

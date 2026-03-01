@@ -22,7 +22,7 @@
 
 A VM (virtual machine) is a software-emulated computer that runs on a physical [host machine](./computer-networks.md#host), with its own [operating system](./operating-system.md#what-is-an-operating-system) and isolated environment.
 
-In this lab, you use a VM provided by the university to deploy and run the application remotely over [SSH](./ssh.md#what-is-ssh).
+In this lab, you use a VM provided by the university to deploy and run the application remotely over [`SSH`](./ssh.md#what-is-ssh).
 
 Docs:
 
@@ -183,8 +183,8 @@ If you can't connect:
 
 5. If you get `Permission denied (publickey)`, check:
    1. Your public key was added to the VM configuration.
-   2. `IdentityFile` in your SSH config points to the correct private key.
-   3. Your private key file permissions are correct (`chmod 600 ~/.ssh/se_toolkit_key` on Linux/macOS/WSL).
+   2. `IdentityFile` in your `SSH` config points to the correct private key.
+   3. Your private key file permissions are correct (`chmod 600 ~/.ssh/se_toolkit_key` on `Linux`/`macOS`/`WSL`).
 6. Ask the TA to help and show them:
    1. The VM page.
    2. The output of `ssh -v se-toolkit-vm`.

@@ -11,6 +11,8 @@
 - [Host](#host)
   - [Hostname](#hostname)
     - [`localhost`](#localhost)
+    - [`127.0.0.1`](#127001)
+    - [`0.0.0.0`](#0000)
   - [Remote host](#remote-host)
 - [Port](#port)
   - [Port number](#port-number)
@@ -87,6 +89,18 @@ It resolves to the loopback [IP address](#ip-address) `127.0.0.1`.
 
 Connections to `localhost` never leave the host — they are handled entirely within the [operating system](./operating-system.md).
 
+#### `127.0.0.1`
+
+`127.0.0.1` is the loopback [IP address](#ip-address). [`localhost`](#localhost) resolves to this address.
+
+#### `0.0.0.0`
+
+`0.0.0.0` is a special [IP address](#ip-address) that means "all network interfaces on this [host](#host)."
+
+When a [process](./operating-system.md#process) [listens on a port](#listen-on-a-port) bound to `0.0.0.0`, it accepts connections from any network interface — including [`localhost`](#localhost) and external networks. In contrast, binding to `127.0.0.1` restricts connections to the local host only.
+
+This is commonly used to make a service accessible from outside the [machine](#machine) (e.g., from your laptop to a [virtual machine](./vm.md#what-is-a-vm)).
+
 ### Remote host
 
 A remote [host](#host) is a host that is not the [local host](#localhost) — it is accessed over a [network](#what-is-a-network).
@@ -120,7 +134,7 @@ When a [process](./operating-system.md#process) "listens on a port", it means th
 
 The [operating system](./operating-system.md) allocates the port to that process, and any incoming network traffic directed to that port will be handled by the listening process.
 
-This is how [services](./operating-system.md#service) like [web servers](./web-development.md), [SSH daemons](./ssh.md#ssh-daemon), or [databases](./database.md) accept connections from clients. A port can only be listened to by one process at a time.
+This is how [services](./operating-system.md#service) like [web servers](./web-development.md), [`SSH` daemons](./ssh.md#ssh-daemon), or [databases](./database.md) accept connections from clients. A port can only be listened to by one process at a time.
 
 ## Wi-Fi
 

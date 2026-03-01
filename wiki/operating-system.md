@@ -48,7 +48,7 @@ Students on `Windows` can use [`WSL`](#wsl) (Windows Subsystem for Linux) to run
 
 Docs:
 
-- [WSL documentation](https://learn.microsoft.com/en-us/windows/wsl/)
+- [`WSL` documentation](https://learn.microsoft.com/en-us/windows/wsl/)
 
 > [!TIP]
 > To use `WSL` with `VS Code`, see [(`Windows` only) Set up running `VS Code` in `WSL`](./vs-code.md#windows-only-set-up-running-vs-code-in-wsl).
@@ -89,7 +89,7 @@ A service is a long-running [process](#process) that performs specific system fu
 
 Services typically start automatically during system boot and run in the background without direct user interaction. They can be managed using system service managers like `systemd`, `init`, or service scripts.
 
-Common examples include [web servers](./web-development.md), [database servers](./database.md#database-server) (`MySQL`/`PostgreSQL`), [SSH daemons](./ssh.md#ssh-daemon), and network services.
+Common examples include [web servers](./web-development.md), [database servers](./database.md#database-server) (`MySQL`/`PostgreSQL`), [`SSH` daemons](./ssh.md#ssh-daemon), and network services.
 
 Services often [listen on specific ports](./computer-networks.md#listen-on-a-port) to handle incoming requests.
 

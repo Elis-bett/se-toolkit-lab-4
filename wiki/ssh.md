@@ -3,9 +3,9 @@
 <h2>Table of contents</h2>
 
 - [What is `SSH`](#what-is-ssh)
-- [SSH daemon](#ssh-daemon)
+- [`SSH` daemon](#ssh-daemon)
 - [`ssh-agent`](#ssh-agent)
-- [Set up SSH](#set-up-ssh)
+- [Set up `SSH`](#set-up-ssh)
   - [Create a new `SSH` key](#create-a-new-ssh-key)
   - [Find the `SSH` key files](#find-the-ssh-key-files)
   - [Start the `ssh-agent`](#start-the-ssh-agent)
@@ -32,7 +32,7 @@ All commands below assume a Unix shell: `Bash` (`Linux`, `WSL`) or `Zsh` (`macOS
 > [!IMPORTANT]
 > **Windows users:** Use `WSL` (Windows Subsystem for Linux). Do not use `PowerShell`, `cmd.exe`, or `Git Bash` — the commands below are not guaranteed to work there.
 
-## SSH daemon
+## `SSH` daemon
 
 The `SSH` daemon (`sshd`) is a program that runs on the [remote host](./computer-networks.md#remote-host) and [listens](./computer-networks.md#listen-on-a-port) for incoming `SSH` connections.
 
@@ -46,7 +46,7 @@ When `ssh-agent` holds your key, you do not need to type a passphrase every time
 
 See [Start the `ssh-agent`](#start-the-ssh-agent) for setup instructions.
 
-## Set up SSH
+## Set up `SSH`
 
 Set up [`SSH`](#what-is-ssh) to connect to a [remote host](./computer-networks.md#remote-host).
 
@@ -217,9 +217,9 @@ You can connect using the alias that you [added to your `SSH` config](#add-the-h
 
 Key-based authentication uses your private key to prove your identity. The remote host checks whether the matching public key is listed as authorized.
 
-This is the recommended method and is what [Set up SSH](#set-up-ssh) configures.
+This is the recommended method and is what [Set up `SSH`](#set-up-ssh) configures.
 
-1. [Set up SSH](#set-up-ssh).
+1. [Set up `SSH`](#set-up-ssh).
 2. Ensure your public key is added to the remote host.
 3. [Connect to the VM](#connect-to-the-vm).
 

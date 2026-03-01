@@ -21,4 +21,4 @@ How it works:
 
 ## VM hardening
 
-See [`VM hardening`](./vm-hardening.md).
+See [VM hardening](./vm-hardening.md).
