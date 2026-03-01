@@ -24,3 +24,45 @@ def test_filter_returns_interaction_with_matching_ids() -> None:
     result = _filter_by_item_id(interactions, 1)
     assert len(result) == 1
     assert result[0].id == 1
+
+
+def test_filter_excludes_interaction_with_different_learner_id() -> None:
+    test_interaction = _make_log(id=1, learner_id=2, item_id=1)
+    other_interaction = _make_log(id=2, learner_id=1, item_id=2)
+
+    interactions = [test_interaction, other_interaction]
+    filtered_interactions = _filter_by_item_id(interactions, 1)
+
+    assert len(filtered_interactions) == 1
+    assert filtered_interactions[0].id == 1
+    assert filtered_interactions[0].item_id == 1
+    assert filtered_interactions[0].learner_id == 2
+
+
+def test_filter_by_item_id_with_zero_item_id():
+    """Test _filter_by_item_id with item_id=0 (boundary value)."""
+    interactions = [
+        InteractionLog(id=1, learner_id=1, item_id=0, kind="view"),
+        InteractionLog(id=2, learner_id=1, item_id=1, kind="attempt"),
+        InteractionLog(id=3, learner_id=1, item_id=0, kind="hint"),
+    ]
+
+    result = _filter_by_item_id(interactions, 0)
+
+    assert len(result) == 2
+    assert all(i.item_id == 0 for i in result)
+    assert set(i.id for i in result) == {1, 3}
+
+
+def test_filter_by_item_id_with_large_item_id():
+    """Test _filter_by_item_id with a very large item_id value."""
+    large_id = 2**31 - 1  # Max 32-bit signed integer
+    interactions = [
+        InteractionLog(id=1, learner_id=1, item_id=large_id, kind="view"),
+        InteractionLog(id=2, learner_id=1, item_id=1, kind="attempt"),
+    ]
+
+    result = _filter_by_item_id(interactions, large_id)
+
+    assert len(result) == 1
+    assert result[0].item_id == large_id
